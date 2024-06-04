@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Car:
     def __init__(self, comfort_class: int,
                  clean_mark: int, brand: int) -> None:
@@ -21,8 +18,8 @@ class CarWashStation:
         profit = 0
         for car in list_car:
             if car.clean_mark < self.clean_power:
-                profit += CarWashStation.calculate_washing_price(self, car)
-                CarWashStation.wash_single_car(self, car)
+                profit += self.calculate_washing_price(car)
+                self.wash_single_car(car)
 
         return round(profit, 1)
 
